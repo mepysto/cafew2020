@@ -1,0 +1,47 @@
+//  숨김 콘텐츠 <-- 빌드시에 이 주석은 사라짐, 단축키 ctrl+슬래쉬 /,  /* */ 는 살아있음
+.a11y-hidden, legend{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0,0 0,0 0);
+}
+
+//  스타일 초기화 
+ul, ol, li{
+  list-style-type: none;
+  padding-left: 0;
+}
+fieldset{
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+img{
+  vertical-align: top; //이미지 아래쪽에 갭이 생기는 것을 방지, middle로 설정해도 됨.
+}
+
+//  링크 스타일 
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+//  본문 스타일 
+html{
+  font-size: 10px; //기본 픽셀은 16px 
+}
+
+body{
+  font-family: 'Spoqa Han Sans', 'Sans-serif'; // spoqa han sans 가 있으면 그걸 보여주고 없으면 sans-serif
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: $primary-color; // variable에 있는 변수를 사용
+  background-color: $primary-bg-color; // variable에 있는 변수를 사용
+}
+
+//  기본 박스 사이징 선언 
+body *, body *::before, body *::after{
+  box-sizing: border-box; 
+}
