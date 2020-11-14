@@ -1,0 +1,84 @@
+@import "./mixin";
+
+//헤더 컨테이너
+.header-container{
+  //background-color: darkblue;
+  //border:10px solid currentColor; // currentColor를 활용하면 보더와 헤더의 텍스트 컬러를 동시에 바꿀 수 있으므로 유지보수가 편함
+  border-bottom: 1px solid $header-border-color;
+}
+
+// 헤더
+.header{
+  height: 80px;
+  @include flexbox($ma:space-between); // mixin 로드 재사용
+
+  // 로고
+  &__logo{
+    width: 100px;
+    height: 40px;
+    //background-color: red;
+    a{
+      display: block;
+    }
+    svg{
+      width: inherit; // 부모상속
+      height: inherit; // 부모상속    
+    }
+  }
+
+  //회원 가입 및 로그인 링크
+  &__member-list{
+    order: -1;
+    @include flexbox();
+    //background-color: green; //영역 사이즈 확인용
+    // signin, signout 여백설정
+    li{
+      margin-right: 5px;
+    }
+    a{
+      display: block;
+      padding: 5px;
+    }
+  }
+
+  .search{
+    @include flexbox();
+    border-bottom: 1px solid $header-border-color;
+    input{
+      color: inherit;
+      width: 200px;
+      height: 40px;
+      border: 0;
+      padding-left: 1em; // 1글자 만큼 띄우기
+      background-color: transparent;
+    }
+    input:focus{ 
+      outline: 0; // 포커스 될 시아웃라인 설정
+    }
+
+    &__button-container{
+      //background-color: orange; //배경영역 확인용
+      button{
+        @include buttonNone(); //괄호는 생략 가능        
+      }
+
+      button:focus{
+        outline:  0; //클라이언트가 원할 경우 아웃라인을 지울 수 있다.
+      }
+      
+      // 포커스가 가능한 상태에서 가상클래스를 이용해 특정상태를 설정할 수 있다.
+      button:focus-visible { 
+        //background-color: pink; 
+        //border: 2px solid;
+        outline: 2px solid blueviolet; // 접근성을 지원하기 위해 적용
+      }
+      
+      .ir{
+        cursor: pointer;
+        @include boxSize(40px,40px);
+        background: url(./../images/icon-search.svg) no-repeat 0 0 / 100% 100%; // 슬래쉬를 기준으로 앞은 
+      }
+    }
+
+  }
+}
