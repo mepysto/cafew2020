@@ -1,7 +1,16 @@
 @import "./mixin";
 
-// 시즌 컨테이너
+// 시즌음료 애니메이션
+@keyframes bounce{
+  0%{
+    transform: translateY(-5px);
+  }
+  100%{
+    transform: translateY(5px);
+  }
+}
 
+// 시즌 컨테이너
 .season-container{
   background-color: $season-bg-color;
   color: $season-text-color;
@@ -18,6 +27,7 @@
   padding: 83px 919px 120px 119px;
   text-align: center;
   position: relative;
+  border: 1px solid red;
   
   &__description{
     // 클래스 공통적용을 아래와 같이 해도 됨.
@@ -55,16 +65,61 @@
     }
     &-text5{
       font-size: 2.6rem;
+      padding-bottom: 20px;
+      border-bottom: 1px solid currentColor;
     }
   }
 
   //음료이미지
-  &__beverage-list{
+  
+  &__beverage-item{
     position: absolute;
-    width: 919px;
-    top: 0;
-    right: 0;
-    margin: 0;
+//    animation: bounce 600ms alternate ease-in-out infinite;
+
+    :hover{
+      animation-play-state: paused;
+    }
+    img{
+      /*
+      animation-name:bounce;
+      animation-duration: 300ms;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
+      */
+      animation: bounce 600ms infinite alternate ease-in-out;
+    }
+
+    &:nth-child(1){
+      width: 441px;
+      height: 445px;
+      top: 113px;
+      right: 523px;
+      /* background-color: lightgreen; */
+      img{
+        animation-delay: 100ms;
+      }
+    }
+    &:nth-child(2){
+      width: 441px;
+      height: 428px;
+      top: 62px;
+      right: 300px;
+      img{
+        animation-delay: 500ms;
+      }
+    }
+    &:nth-child(3){
+      width: 441px;
+      height: 428px;
+      top: 100px;
+      right: 0px;
+      img{
+        animation-delay: 1000ms;
+      }
+
+    }
+    
   }
 
   &-bar{
@@ -85,8 +140,3 @@
 }
 
 
-.season-beverage-list{
-  //position:absolute;
-  right: 0;
-  left: 0;
-}
