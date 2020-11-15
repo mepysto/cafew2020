@@ -1,42 +1,92 @@
+@import "./mixin";
+
 // 시즌 컨테이너
 
 .season-container{
-
   background-color: $season-bg-color;
   color: $season-text-color;
+}
 
+// season__description-text 로 시작하는 클래스들의 모든 속성을 설정 
+// 음료소개 단락 공통
+// season 클래스 밖에 선언하여 구체성 점수 10점 할당, 인스펙터로 확인 -> 캐스캐이딩에 영향을 미침
+[class^="season__description-text"]{
+  display: block;
 }
 
 .season{
-  padding: 83px 919px 129px 119px;
+  padding: 83px 919px 120px 119px;
   text-align: center;
   position: relative;
+  
+  &__description{
+    // 클래스 공통적용을 아래와 같이 해도 됨.
+    /*
+    &-text1, &-text2, &-text3, &-text4, &-text5{
+      display: block;
+    }
+    */
+
+    &-text1,
+    &-text2{
+      font-size: 4rem;
+    }
+    &-text2{
+      @include flexbox($ma:space-between);
+      &::before,
+      &::after{
+        content: "";
+        display: block;
+        width: 160px;
+        height: 1px;
+        background-color: $season-text-color;
+      }
+    }
+    &-text3,
+    &-text4{
+      font-size: 9rem;
+      font-weight: 700;
+      color: $season-text-color2;
+    }
+    &-text1,
+    &-text3,
+    &-text4{
+      text-transform: uppercase;      
+    }
+    &-text5{
+      font-size: 2.6rem;
+    }
+  }
+
+  //음료이미지
+  &__beverage-list{
+    position: absolute;
+    width: 919px;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+
+  &-bar{
+    display: flex;
+    @include flexbox($ma:space-between); // mixin 로드 재사용
+  }
+  //음료정보 자세히 보기
+  &__more{
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $season-text-color2;
+    padding: 10px 25px;
+    height: 40px;
+    margin-top: 40px;
+    border: 1px solid $season-text-color2;
+  }
 }
+
 
 .season-beverage-list{
-  position:absolute;
+  //position:absolute;
   right: 0;
   left: 0;
-}
-.season__description-text1,
-.season__description-text2{
-  font-size: 4rem;
-}
-
-.season__description-text3,
-.season__description-text4{
-  font-size: 9rem;
-  font-weight: 700;
-  color: $season-text-color2;
-}
-
-.season__description-text5{
-  font-size: 2.8rem;
-}
-
-.season__more{
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: $season-text-color2;
-
 }
