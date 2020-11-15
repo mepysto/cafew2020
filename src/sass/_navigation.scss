@@ -16,7 +16,7 @@
     @include flexbox();
     width: 1156px;
     margin: 10px auto; // 가운데 정렬    
-    @include flexbox($ma:space-between);
+    @include flexbox($ma:space-between); //flex 방식 사용
   }
   li{
     margin-top: 7px;
