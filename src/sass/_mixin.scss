@@ -1,25 +1,25 @@
-// 플렉스 박스 믹스인
-@mixin flexbox($fd:row,$fw:nowrap,$ma:flex-start,$ca:center){
-  display: flex;
-  //flex-flow: row nowrap;
-  flex-direction: $fd;
-  flex-wrap: $fw;
-  //justify-content: space-between;
-  //align-items: center;
-  justify-content: $ma;
-  align-items: $ca;
+// 플렉스 박스 믹스인, 
+@mixin flexbox($fd:row, $fw:nowrap, $ma:flex-start, $ca:center) {
+    display: flex;
+    //flex-flow: row nowrap;
+    flex-direction: $fd; //자식요소를 특정방향 (row,column)으로 정렬하며 묶을 수 있다.
+    flex-wrap: $fw;
+    //justify-content: space-between;
+    //align-items: center;
+    justify-content: $ma;
+    align-items: $ca;
 }
 
 // 버튼 기본 스타일 초기화
 @mixin buttonNone {
-  padding: 0;
-  border:0;
-  background-color: transparent;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
 }
 
 //가로 세로 크기를 가진 블록박스 설정하기
 @mixin boxSize($sw, $sh) {
-  display: block;
-  width: $sw;
-  height: $sh;
+    display: block;
+    width: $sw;
+    height: $sh;
 }
