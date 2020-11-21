@@ -1,0 +1,59 @@
+@import "./mixin";
+
+// 메인 영역을 기준으로 공지사항을 배치하기 위함. 
+.notice-container{
+  position: relative;
+}
+.notice{
+  @include flexbox($ma:space-between); //flex 방식 사용, space-between 사용. space-even 은 ie11 에서 적용안됨...
+ 
+  $box-height: 60px; //sass 는 변수 활용을 통해 유지보완에 가용성을 높인다.
+  $list-height: 24px;
+
+  position: absolute; //absolute는 자기보다 상위 요소의 레이아웃 포지션을 고려해야한다.
+  top: -94px; //top: 580px;   
+  left: 50%;  
+  width: 420px;
+  height: $box-height;
+  border-radius: $box-height/2;
+  background-color: $notice-bg-color;
+  transform: translateX(-50%);
+  padding: 0 10px 0 30px;
+  
+  // 공지사항 목록  
+  &__inform-list{
+    margin: 0 30px 0 0;
+    height: $list-height;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+  &__inform-item{
+    height: $list-height;
+    //display: inline-block; 
+    @include flexbox(); //inline-block을 사용하지 않고 flex를 사용하면 여러 이점이...
+
+    &::before{ //css에서 이미지를 삽입하려면 자식요소로 이미지의 위치(before, after)에다 이미지를 삽입해주면 된다.
+      content: "";
+      width: 26px;
+      height: $list-height;
+      background: url(./../images/icon-sound.svg) no-repeat 0 0 / 100% 100%;
+    }
+
+    a{
+      margin: 0 19px;
+      flex-grow: 1;
+      font-size: 1.6rem;
+
+      white-space: nowrap; //줄바꿈 금지
+      overflow: hidden; //글자가 넘어가는 것은 감춤
+      text-overflow: ellipsis; // ... 으로 표현
+    }
+
+  }
+}
+// 공지사항 닫기 버튼 
+.close-button{
+  border: 0;
+  background-color: transparent;
+  //padding: 0;
+}

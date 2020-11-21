@@ -1,0 +1,55 @@
+@import "./mixin";
+
+.lecture-container{
+  background: #fff;
+}
+
+.lecture{
+  
+  background-color: darkblue;
+
+  .tab-list{
+    margin: 0;
+    @include flexbox();
+    
+    li{
+      width: 50%;
+    }
+    .tab{
+      display: block;
+      background: $lecture-dark-color;
+      height: 64px;  
+      @include flexbox();
+      justify-content: flex-end;
+
+      &[aria-selected='true']{
+        background: #fff;
+        color: $lecture-dark-color;
+        
+        &::after{
+          background-image: url(./../images/icon-up.svg);
+        }
+
+      }
+      
+      &::after{
+        content: "";
+        width: 24px;
+        height: 24px;
+        margin-left: 20px;
+        margin-right: 20px;
+        background: url(./../images/icon-down.svg) no-repeat 0 0 / 100% 100%;
+      }
+    }
+  }
+
+  &__panel{
+    position: relative;
+    @include flexbox();
+    padding: 40px 108px 38px 108px;
+
+  }
+
+
+
+}
