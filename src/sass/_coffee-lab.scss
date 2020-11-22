@@ -37,7 +37,7 @@
     }
     &__lab-list {
         width: 1200px;
-        //margin: 55px 0 0;
+        margin: 0 auto;
         @include flexbox();
     }
     &__lab-item {
