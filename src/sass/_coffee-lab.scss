@@ -1,0 +1,87 @@
+@import "./mixin";
+.coffee-lab-container {
+    background-color: #fff;
+}
+
+.coffee-lab {
+    text-align: center;
+    display: block;
+    padding: 80px 0 215px 0;
+    position: relative;
+    &--thin {
+        font-weight: 100;
+    }
+    &--bold {
+        font-weight: 700;
+    }
+    &__title,
+    &__description {
+        text-align: center;
+        text-transform: uppercase;
+        color: black;
+    }
+    &__title {
+        margin: 0;
+        font-size: 4.6rem;
+        margin-bottom: 8px;
+    }
+    &__description {
+        font-size: 1.6rem;
+        &::after {
+            content: "";
+            display: block;
+            margin: 55px auto; // 가로세로 마진 자동으로 처리하여 가운데로 정렬
+            width: 70px;
+            border-top: 1px solid currentColor;
+        }
+    }
+    &__lab-list {
+        width: 1200px;
+        //margin: 55px 0 0;
+        @include flexbox();
+    }
+    &__lab-item {
+        min-width: 692px;
+        height: 692px;
+        margin-top: 133px;
+        position: relative;
+        color: $primary-color;
+        flex-shrink: 0;
+        text-transform: uppercase;
+        background: no-repeat 0 0 / 100% 100%;
+        a {
+            display: inline-block;
+            padding: 407px 0 0 120px;
+            //letter-spacing: 0.1em;
+            font-weight: 700;
+            font-size: 3.2rem;
+            line-height: 1.4;
+            text-align: left;
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 0;
+                height: 10px;
+                background-color: #fff;
+                //border-top: 10px solid $primary-color;
+                margin-top: 20px;
+                transition: all 0.4s; // transition 방법으로 애니메이션 주기
+            }
+            //마우스 호버시, 키보드 포커스시
+            &:hover::after,
+            &:focus::after {
+                width: 100%;
+                background-color: $season-text-color; //호버시 색상 변경
+            }
+        }
+    }
+    .menu {
+        background: url(../images/photo-frame1.jpg);
+        top: -133px;
+        z-index: 1;
+    }
+    .brista {
+        background: url(../images/photo-frame2.jpg);
+        left: -184px;
+    }
+}
