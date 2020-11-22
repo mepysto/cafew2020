@@ -368,6 +368,147 @@ body :before {
     background-color: transparent
 }
 
+.reserve-container {
+    border: 1px solid #fff;
+    width: 100%;
+    background: radial-gradient(109.05% 429.25% at 50% 50%, rgba(23, 15, 4, 0) 0, #3c1d0a 100%), url(/.././images/reserve-bg.bd607921.jpg) no-repeat 50% 50%/cover
+}
+
+.reserve {
+    position: relative;
+    min-height: 480px;
+    padding: 90px 0 0 224px
+}
+
+.reserve__subtitle,
+.reserve__title {
+    text-transform: uppercase;
+    margin: 0
+}
+
+.reserve__title {
+    font-size: 1.8rem;
+    font-weight: 700
+}
+
+.reserve__subtitle {
+    font-size: 2.6rem;
+    line-height: 1.45
+}
+
+.reserve__description {
+    width: 192px;
+    font-size: 1.6rem;
+    line-height: 1.3
+}
+
+.reserve__more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: 2px solid #a37356
+}
+
+.reserve__bg-container {
+    position: absolute;
+    top: 124px;
+    left: 120px
+}
+
+.reserve__bg-container path {
+    fill: #fff
+}
+
+.reserve__bg-container line {
+    stroke: #fff
+}
+
+.pick-container {
+    background: linear-gradient(105.54deg, rgba(32, 23, 1, .5) 36.2%, rgba(95, 57, 35, .2) 74.71%), url(/.././images/image10.e9303eed.png) no-repeat 50% 50%/cover
+}
+
+.pick {
+    position: relative;
+    text-align: right;
+    padding: 110px 925px 110px 110px
+}
+
+.pick .line-break {
+    display: block
+}
+
+.pick__title {
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: .8
+}
+
+.pick--large {
+    font-size: 15.5rem
+}
+
+.pick--medium {
+    font-size: 13.3rem
+}
+
+.pick--small {
+    font-size: 7.4rem
+}
+
+.pick__description {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 44px;
+    margin-bottom: 0
+}
+
+.pick__good-list {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 0
+}
+
+.pick__more {
+    display: inline-block;
+    padding: 10px 25px;
+    margin-top: 40px;
+    border: 1px solid
+}
+
+.pick__photo-container {
+    position: absolute;
+    top: 150px;
+    left: 600px;
+    display: flex
+}
+
+.pick__photo-container .photo1 {
+    transform: translateY(40px) rotate(-9.21deg)
+}
+
+.pick__photo-container .photo2 {
+    transform: translate(-80px) rotate(8.71deg)
+}
+
+.pick__photo-container .photo3 {
+    transform: translate(-220px, 150px) rotate(29.6deg)
+}
+
+.pick__photo-image {
+    width: 284px;
+    padding: 10px;
+    background: #fff
+}
+
+.pick__photo-image img {
+    max-width: 100%;
+    height: auto
+}
+
 .lecture-container {
     background: #fff
 }
@@ -429,5 +570,105 @@ body :before {
     padding: 40px 108px 38px
 }
 
+.coffee-lab-container {
+    background-color: #fff
+}
 
-/*# sourceMappingURL=/style.711c14e6.css.map */
+.coffee-lab {
+    text-align: center;
+    display: block;
+    padding: 80px 0 215px;
+    position: relative
+}
+
+.coffee-lab--thin {
+    font-weight: 100
+}
+
+.coffee-lab--bold {
+    font-weight: 700
+}
+
+.coffee-lab__description,
+.coffee-lab__title {
+    text-align: center;
+    text-transform: uppercase;
+    color: #000
+}
+
+.coffee-lab__title {
+    font-size: 4.6rem;
+    margin: 0 0 8px
+}
+
+.coffee-lab__description {
+    font-size: 1.6rem
+}
+
+.coffee-lab__description:after {
+    content: "";
+    display: block;
+    margin: 55px auto;
+    width: 70px;
+    border-top: 1px solid
+}
+
+.coffee-lab__lab-list {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center
+}
+
+.coffee-lab__lab-item {
+    min-width: 692px;
+    height: 692px;
+    margin-top: 133px;
+    position: relative;
+    color: #fffcf9;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    background: no-repeat 0 0/100% 100%
+}
+
+.coffee-lab__lab-item a {
+    display: inline-block;
+    padding: 407px 0 0 120px;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 1.4;
+    text-align: left
+}
+
+.coffee-lab__lab-item a:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 10px;
+    background-color: #fff;
+    margin-top: 20px;
+    transition: all .4s
+}
+
+.coffee-lab__lab-item a:focus:after,
+.coffee-lab__lab-item a:hover:after {
+    width: 100%;
+    background-color: #a37356
+}
+
+.coffee-lab .menu {
+    background: url(/.././images/photo-frame1.4cf3df3f.jpg);
+    top: -133px;
+    z-index: 1
+}
+
+.coffee-lab .brista {
+    background: url(/.././images/photo-frame2.55450aa7.jpg);
+    left: -184px
+}
+
+
+/*# sourceMappingURL=/style.a700009d.css.map */
